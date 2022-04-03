@@ -14,6 +14,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+    //dummy data
     list.add(
         Expense(mainIcon: Icons.shopping_cart,
             date: "4 Mar", expenseName: "expenseName",
