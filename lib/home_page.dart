@@ -1,4 +1,5 @@
 import 'package:bfs_assignment/modal/expense.dart';
+import 'package:bfs_assignment/modal/get_icon.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -16,18 +17,33 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     //dummy data
     list.add(
-        Expense(mainIcon: Icons.shopping_cart,
-            date: "4 Mar", expenseName: "expenseName",
+        Expense(mainIcon: GetIcon.getRespIcon("Rent"),
+            date: "4 Mar", expenseName: "Rent",
             expenseType: "expenseType", myShare: 1250, expenseTypeIcon: Icons.camera_enhance)
     );
     list.add(
-        Expense(mainIcon: Icons.shopping_cart,
-            date: "4 Mar", expenseName: "expenseName",
+        Expense(mainIcon: GetIcon.getRespIcon("transport"),
+            date: "4 Mar", expenseName: "transport",
             expenseType: "expenseType", myShare: 1250, expenseTypeIcon: Icons.camera_enhance)
     );
     list.add(
-        Expense(mainIcon: Icons.shopping_cart,
-            date: "4 Mar", expenseName: "expenseName",
+        Expense(mainIcon: GetIcon.getRespIcon("Savings"),
+            date: "4 Mar", expenseName: "Savings",
+            expenseType: "expenseType", myShare: 1250, expenseTypeIcon: Icons.camera_enhance)
+    );
+    list.add(
+        Expense(mainIcon: GetIcon.getRespIcon("Bills / Utility"),
+            date: "4 Mar", expenseName: "Bills / Utility",
+            expenseType: "expenseType", myShare: 1250, expenseTypeIcon: Icons.camera_enhance)
+    );
+    list.add(
+        Expense(mainIcon: GetIcon.getRespIcon("Entertainment"),
+            date: "4 Mar", expenseName: "Entertainment",
+            expenseType: "expenseType", myShare: 1250, expenseTypeIcon: Icons.camera_enhance)
+    );
+    list.add(
+        Expense(mainIcon: GetIcon.getRespIcon("Domestic Help"),
+            date: "4 Mar", expenseName: "Domestic Help",
             expenseType: "expenseType", myShare: 1250, expenseTypeIcon: Icons.camera_enhance)
     );
   }
@@ -40,104 +56,6 @@ class _HomePageState extends State<HomePage> {
           padding: EdgeInsets.all(20.0),
           child: Column(
             children: [
-              Row(
-                children: [
-                  Flexible(
-                    fit: FlexFit.tight,
-                    child: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          selected = 1;
-                        });
-                      },
-                      child: Container(
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: Color(0xff1F1F1F),
-                          border: Border.all(
-                            color: selected == 1 ? Color(0xff706DAC) : Colors.transparent
-                          ),
-                          borderRadius: BorderRadius.circular(7)
-                        ),
-                        child: Center(
-                          child: Text(
-                            "All",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Flexible(
-                    fit: FlexFit.tight,
-                    child: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          selected = 2;
-                        });
-                      },
-                      child: Container(
-                        height: 50,
-                        decoration: BoxDecoration(
-                            color: Color(0xff1F1F1F),
-                            border: Border.all(
-                                color: selected == 2 ? Color(0xff706DAC) : Colors.transparent
-                            ),
-                            borderRadius: BorderRadius.circular(7)
-                        ),
-                        child: Center(
-                          child: Text(
-                            "Expenses",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Flexible(
-                    fit: FlexFit.tight,
-                    child: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          selected = 3;
-                        });
-                      },
-                      child: Container(
-                        height: 50,
-                        width: 140,
-                        decoration: BoxDecoration(
-                          color: Color(0xff1F1F1F),
-                            border: Border.all(
-                                color: selected == 3 ?  Color(0xff706DAC) : Colors.transparent
-                            ),
-                            borderRadius: BorderRadius.circular(7)
-                        ),
-                        child: Center(
-                          child: Text(
-                            "Payments",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
               SizedBox(
                 height: 25,
               ),
@@ -163,15 +81,25 @@ class _HomePageState extends State<HomePage> {
                               size: 30,
                             ),
                           ),
-                          title: Row(
+                          title: Padding(
+                            padding: EdgeInsets.only(bottom: 12.0),
+                            child: Text(
+                              "${list[index].expenseName}",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20
+                              ),
+                            ),
+                          ),
+                          subtitle: Row(
                             children: [
                               Container(
                                 decoration: BoxDecoration(
-                                  color: Color(0xff2C2C2C),
-                                  borderRadius: BorderRadius.circular(20),
-                                  border: Border.all(
-                                    color: Colors.white
-                                  )
+                                    color: Color(0xff2C2C2C),
+                                    borderRadius: BorderRadius.circular(20),
+                                    border: Border.all(
+                                        color: Colors.white
+                                    )
                                 ),
                                 padding: EdgeInsets.all(5),
                                 child: Row(
@@ -187,8 +115,8 @@ class _HomePageState extends State<HomePage> {
                                     Text(
                                       list[index].date,
                                       style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 10
+                                          color: Colors.white,
+                                          fontSize: 10
                                       ),
                                     )
                                   ],
@@ -228,32 +156,12 @@ class _HomePageState extends State<HomePage> {
                               )
                             ],
                           ),
-                          subtitle: Text(
-                            "${list[index].expenseName}",
+                          trailing: Text(
+                            "₹${list[index].myShare}",
                             style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20
+                                color: Color(0xffE1E1E1),
+                                fontSize: 20
                             ),
-                          ),
-                          trailing: Column(
-                            children: [
-                              Text(
-                                "Your share",
-                                style: TextStyle(
-                                  color: Color(0xff989898)
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "₹${list[index].myShare}",
-                                style: TextStyle(
-                                    color: Color(0xffE1E1E1),
-                                  fontSize: 20
-                                ),
-                              ),
-                            ],
                           ),
                         ),
                       ),
