@@ -1,27 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class GetIcon {
   static IconData getRespIcon(String name) {
     IconData iconData = Icons.ac_unit;
     switch (name) {
       case "Rent":
-        iconData = FontAwesomeIcons.house;
+        iconData = Icons.house;
         break;
       case "Bills / Utility":
-        iconData = FontAwesomeIcons.moneyBill;
+        iconData = Icons.money;
         break;
       case "Groceries":
-        iconData = FontAwesomeIcons.bagShopping;
+        iconData = Icons.shopping_cart;
         break;
       case "Transport":
-        iconData = FontAwesomeIcons.car;
+        iconData = Icons.car_rental;
         break;
       case "Domestic Help":
         iconData = Icons.person_outline_sharp;
         break;
       case "Other Needs":
-        iconData = FontAwesomeIcons.o;
+        iconData = Icons.money;
         break;
       case "Shopping":
         iconData = Icons.shopping_cart;
