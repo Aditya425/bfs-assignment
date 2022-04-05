@@ -97,6 +97,7 @@ class _HomePageState extends State<HomePage> {
                           subtitle: Row(
                             children: [
                               Container(
+                                padding: EdgeInsets.only(bottom: 12),
                                 decoration: BoxDecoration(
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(20),
@@ -104,7 +105,6 @@ class _HomePageState extends State<HomePage> {
                                         color: Colors.white
                                     )
                                 ),
-                                padding: EdgeInsets.all(5),
                                 child: Row(
                                   children: [
                                     Icon(
