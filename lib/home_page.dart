@@ -19,38 +19,38 @@ class _HomePageState extends State<HomePage> {
     list.add(
         Expense(mainIcon: GetIcon.getRespIcon("Rent"),
             date: "4 Mar", expenseName: "Rent",
-            expenseType: "expenseType", myShare: 1250, expenseTypeIcon: Icons.camera_enhance)
+            merchantType: "merchantTypecfcfcc", myShare: 1250, expenseTypeIcon: Icons.camera_enhance)
     );
     list.add(
         Expense(mainIcon: GetIcon.getRespIcon("transport"),
             date: "4 Mar", expenseName: "transport",
-            expenseType: "expenseType", myShare: 1250, expenseTypeIcon: Icons.camera_enhance)
+            merchantType: "merchantType", myShare: 1250, expenseTypeIcon: Icons.camera_enhance)
     );
     list.add(
         Expense(mainIcon: GetIcon.getRespIcon("Savings"),
             date: "4 Mar", expenseName: "Savings",
-            expenseType: "expenseType", myShare: 1250, expenseTypeIcon: Icons.camera_enhance)
+            merchantType: "merchantType", myShare: 1250, expenseTypeIcon: Icons.camera_enhance)
     );
     list.add(
         Expense(mainIcon: GetIcon.getRespIcon("Bills / Utility"),
             date: "4 Mar", expenseName: "Bills / Utility",
-            expenseType: "expenseType", myShare: 1250, expenseTypeIcon: Icons.camera_enhance)
+            merchantType: "merchantType", myShare: 1250, expenseTypeIcon: Icons.camera_enhance)
     );
     list.add(
         Expense(mainIcon: GetIcon.getRespIcon("Entertainment"),
             date: "4 Mar", expenseName: "Entertainment",
-            expenseType: "expenseType", myShare: 1250, expenseTypeIcon: Icons.camera_enhance)
+            merchantType: "merchantType", myShare: 1250, expenseTypeIcon: Icons.camera_enhance)
     );
     list.add(
         Expense(mainIcon: GetIcon.getRespIcon("Domestic Help"),
             date: "4 Mar", expenseName: "Domestic Help",
-            expenseType: "expenseType", myShare: 1250, expenseTypeIcon: Icons.camera_enhance)
+            merchantType: "merchantType", myShare: 1250, expenseTypeIcon: Icons.camera_enhance)
     );
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.all(20.0),
@@ -64,20 +64,23 @@ class _HomePageState extends State<HomePage> {
                   itemCount: list.length,
                   itemBuilder: (context, index) {
                     return Padding(
-                      padding: EdgeInsets.all(13),
+                      padding: EdgeInsets.all(9),
                       child: Container(
-                        padding: EdgeInsets.only(top: 20, bottom: 20),
+                        padding: EdgeInsets.only(top: 9, bottom: 9),
                         decoration: BoxDecoration(
-                          color: Color(0xff1F1F1F),
-                          borderRadius: BorderRadius.circular(20)
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(
+                            color: Colors.green
+                          )
                         ),
                         child: ListTile(
                           leading: CircleAvatar(
                             radius: 25,
-                            backgroundColor: Color(0xff2C2C2C),
+                            backgroundColor: Colors.white,
                             child: Icon(
                               list[index].mainIcon,
-                              color: Colors.white,
+                              color: Colors.black,
                               size: 30,
                             ),
                           ),
@@ -86,8 +89,8 @@ class _HomePageState extends State<HomePage> {
                             child: Text(
                               "${list[index].expenseName}",
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20
+                                  color: Colors.black,
+                                  fontSize: 17
                               ),
                             ),
                           ),
@@ -95,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               Container(
                                 decoration: BoxDecoration(
-                                    color: Color(0xff2C2C2C),
+                                    color: Colors.white,
                                     borderRadius: BorderRadius.circular(20),
                                     border: Border.all(
                                         color: Colors.white
@@ -106,8 +109,8 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     Icon(
                                       Icons.calendar_today,
-                                      color: Colors.white,
-                                      size: 10,
+                                      color: Colors.black,
+                                      size: 12,
                                     ),
                                     SizedBox(
                                       width: 5,
@@ -115,8 +118,8 @@ class _HomePageState extends State<HomePage> {
                                     Text(
                                       list[index].date,
                                       style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 10
+                                          color: Colors.black,
+                                          fontSize: 12
                                       ),
                                     )
                                   ],
@@ -125,42 +128,54 @@ class _HomePageState extends State<HomePage> {
                               SizedBox(
                                 width: 3,
                               ),
-                              Container(
-                                decoration: BoxDecoration(
-                                    color: Color(0xff2C2C2C),
-                                    borderRadius: BorderRadius.circular(20),
-                                    border: Border.all(
-                                        color: Colors.white
-                                    )
-                                ),
-                                padding: EdgeInsets.all(5),
-                                child: Row(
-                                  children: [
-                                    Icon(
-                                      list[index].expenseTypeIcon,
-                                      color: Color(0xffFFDE62),
-                                      size: 10,
-                                    ),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Text(
-                                      list[index].expenseType,
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 10
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              )
                             ],
                           ),
-                          trailing: Text(
-                            "₹${list[index].myShare}",
-                            style: TextStyle(
-                                color: Color(0xffE1E1E1),
-                                fontSize: 20
+                          trailing: Container(
+                            width: 107,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(
+                                  "₹${list[index].myShare}",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 17
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Container(
+                                  width: 97,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(
+                                      color: Colors.green,
+                                    ),
+                                    borderRadius: BorderRadius.circular(20)
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.all(5.0),
+                                        child: Icon(
+                                          list[index].expenseTypeIcon,
+                                          color: Colors.black,
+                                          size: 15,
+                                        ),
+                                      ),
+                                      FittedBox(
+                                        child: Text(
+                                          "${list[index].merchantType}",
+                                          style: TextStyle(
+                                            fontSize: 11
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
                             ),
                           ),
                         ),
