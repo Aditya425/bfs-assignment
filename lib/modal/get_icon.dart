@@ -8,16 +8,16 @@ class GetIcon {
         iconData = Icons.house;
         break;
       case "Bills / Utility":
-        iconData = Icons.money;
+        iconData = Icons.receipt_long;
         break;
       case "Groceries":
         iconData = Icons.shopping_cart;
         break;
       case "Transport":
-        iconData = Icons.car_rental;
+        iconData = Icons.directions_car;
         break;
       case "Domestic Help":
-        iconData = Icons.person_outline_sharp;
+        iconData = Icons.cleaning_services;
         break;
       case "Other Needs":
         iconData = Icons.money;
@@ -26,10 +26,10 @@ class GetIcon {
         iconData = Icons.shopping_cart;
         break;
       case "Gym / Salon":
-        iconData = Icons.accessibility_sharp;
+        iconData = Icons.spa;
         break;
       case "Entertainment":
-        iconData = Icons.tv;
+        iconData = Icons.delivery_dining;
         break;
       case "Subscription":
         iconData = Icons.tv;
